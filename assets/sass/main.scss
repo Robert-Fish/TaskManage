@@ -24,6 +24,7 @@ html,
 body {
   background: #ededed;
   height: 100%;
+  overflow: hidden;
 }
 
 #home {
@@ -93,6 +94,7 @@ body {
     right: 25px;
     background: $white;
     border-radius: 50%;
+    cursor: pointer;
     top: 125px;
     .fas {
       color: $lightBlue;
@@ -122,16 +124,91 @@ body {
           font-size: 14px;
         }
         .check-box {
-          padding: 10px;
+          padding: 7px;
           border-radius: 10px;
-          border: 3px solid #abababab;
+          border: 3px solid $darkBlue;
           display: inline-block;
           float: right;
           position: absolute;
-          top: 0;
-          right: 0;
+          top: 25px;
+          right: 25px;
+          font-size: 20px;
+          color: $lightBlue;
         }
       }
+    }
+  }
+
+  .task-form {
+    background: $darkBlue;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    color: $white;
+    padding: 50px 0;
+    transform: translate(0, 100%);
+    transition: all 0.6s ease-in-out;
+    &.active {
+      transform: translate(0, 0);
+    }
+    .close-btn {
+      position: absolute;
+      right: 35px;
+      top: 35px;
+      cursor: pointer;
+      padding: 15px;
+      .fas {
+        font-size: 36px;
+      }
+    }
+    form {
+      display: block;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    h3 {
+      margin: 50px 0;
+      font-size: 36px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      margin: 0 0 15px 0;
+      font-size: 24px;
+    }
+    input[type="text"],
+    textarea {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      font-size: 32px;
+      color: $white;
+      width: 100%;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    textarea {
+      height: 250px;
+    }
+    button {
+      background: $lightBlue;
+      padding: 15px 20px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: $white;
     }
   }
 }
@@ -152,4 +229,5 @@ body {
   display: block;
   max-width: 1200px;
   width: 100%;
+  padding: 0 15px;
 }
